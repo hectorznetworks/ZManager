@@ -25,7 +25,7 @@ class Dbmanager {
 
     public function __call($name, $arguments) {
         switch ($name) {
-            case 'conect':
+            case 'connect':
                 $this->DBMS = $arguments[0]['DBMS'];
                 $this->host = $arguments[0]['host'];
                 $this->user = $arguments[0]['user'];
@@ -56,7 +56,7 @@ class Dbmanager {
                     }
                     $sth->execute();
                 } else {
-                    die('no conectado aún');
+                    die('Not Connected Yet');
                 }
                 break;
             case 'update':
@@ -157,7 +157,7 @@ class Dbmanager {
                 break;
 
             default :
-                echo 'No es una function definida';
+                echo 'Undefined Function Called ';
                 break;
         }
     }
